@@ -9,6 +9,7 @@ import os
 from langchain.document_loaders import UnstructuredURLLoader
 from langchain_chroma import Chroma
 import requests
+from bs4 import BeautifulSoup
 
 def format_docs(docs):
     return "\n\n".join(doc.page_content for doc in docs)
