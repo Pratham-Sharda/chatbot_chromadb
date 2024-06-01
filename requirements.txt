@@ -10,3 +10,4 @@ bs4
 requests
 langchain_chroma
 chromadb
+pysqlite3-binary
