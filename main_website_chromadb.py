@@ -52,7 +52,7 @@ class ChatBot():
     all_extracted_urls = get_all_urls(initial_sitemap_url)
     loader = UnstructuredURLLoader(urls=all_extracted_urls)
     documents = loader.load()
-    text_splitter = CharacterTextSplitter(chunk_size=2000, chunk_overlap=200)
+    text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     docs = text_splitter.split_documents(documents)
 
     embeddings = HuggingFaceEmbeddings()
@@ -106,11 +106,11 @@ class ChatBot():
     from langchain_core.runnables import RunnableParallel
 
     system_prompt = (
-    "You are an assistant for question-answering tasks. "
-    "Use the following pieces of retrieved context to answer "
+    "You are an assistant for question-answering on a data related to enviornment. "
+    "Use the following pieces of retrieved-context to answer "
     "the question. If you don't know the answer, say that you "
-    "don't know. Use three sentences maximum and keep the "
-    "answer concise."
+    "don't know. Use 5 sentences minimum and keep the "
+    "answer elaborate."
     "\n\n"
     "{context}"
     )
