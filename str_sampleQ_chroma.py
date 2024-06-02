@@ -65,7 +65,7 @@ def generate_response(input):
     # raw_answer = extract_answer(result['answer'])
     # answer = complete_sentence(raw_answer)  # Ensure the answer is complete
     sources = [doc.metadata['source'] for doc in result['context']]
-    return result["answers"], sources
+    return result["answer"], sources
 
 
 # Store LLM generated responses
